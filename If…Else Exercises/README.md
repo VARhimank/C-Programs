@@ -112,11 +112,65 @@ Percentage	>=	70%	:	Grade	C
 Percentage	>=	60%	:	Grade	D
 Percentage	>=	40%	:	Grade	E
 Percentage < 40% : Grade F
+```
+#include <stdio.h>  
+int main() {
+    int phy,chem,bio,maths,cs;
+    float per;char grade;
+    printf("Input marks for Physics ");
+    scanf("%d",&phy);
+    printf("Input marks for Chemistry ");
+    scanf("%d",&chem);
+    printf("Input marks for Biology ");
+    scanf("%d",&bio);
+    printf("Input marks for Mathematics ");
+    scanf("%d",&maths);
+    printf("Input marks for Computer ");
+    scanf("%d",&cs);
+    per=(phy+bio+chem+cs+maths)/500;
+    per*=100;
+    if(per>=90)
+    { grade='A';}
+    else if(per<90 && per>=80)
+    { grade='B';}
+    else if(per<80 && per>=70)
+    { grade='C';}
+    else if(per<70 && per>=60)
+    { grade='D';}
+    else if(per<60 && per>=40)
+    { grade='E';}
+    else {grade='F';}
+    printf("The percentage is %0.3f and grade is %c",per,grade);
+    return 0;
+}
+```
 
 12.	Write a C program to input basic salary of an employee and calculate its Gross salary according to following:
 Basic	Salary	<=	10000	:	HRA	=	20%,	DA	=	80%
 Basic	Salary	<=	20000	:	HRA	=	25%,	DA	=	90%
 Basic Salary > 20000 : HRA = 30%, DA = 95%
+```
+#include <stdio.h>  
+int main() {
+    int bs,hra,da,gs;
+    printf("Input basic salary ");
+    scanf("%d",&bs);
+    if(bs>20000)
+    { hra=bs*0.3;
+      da=bs*0.95;  
+    }
+    else if(bs<=20000 && bs>10000)
+    { hra=bs*0.25;
+      da=bs*0.9;
+    }
+    else if(bs<=10000)
+    { hra=bs*0.2;
+      da=bs*0.8;}
+    gs=bs+da+hra;
+    printf("The gross salaray is %d",gs);
+    return 0;
+}
+```
 
 13.	Write a C program to input electricity unit charges and calculate total electricity bill according to
 the given condition:
@@ -125,3 +179,30 @@ For	  next	  100		  units	    Rs.	    0.75/unit
 For	  next	  100		  units	    Rs.	    1.20/unit
 For	  unit	  above		250	      Rs.	    1.50/unit
 An additional surcharge of 20% is added to the bill
+```
+#include <stdio.h>  
+int main() {
+    int ele; float bill,temp,extra;
+    printf("Input electric units ");
+    scanf("%d",&ele);
+    if(ele<=50)
+    { bill=ele*0.5;  }
+    else if(ele>50 && ele<=150)
+    { temp=ele-50;
+      bill=(50*0.5)+(temp*0.75);
+    }
+    else if(ele>150 && ele<=250)
+    { temp=ele-150;
+      bill=(50*0.5)+(100*0.75)+(temp*1.2);
+    }
+    
+    if(ele>250)
+    { extra=ele-250;
+      extra=extra*0.2;
+    }
+    else { extra=0;}
+    bill=bill+extra;
+    printf("The electicity bill is %0.2f",bill);
+    return 0;
+}
+```
