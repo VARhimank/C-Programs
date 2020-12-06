@@ -3,7 +3,8 @@
 ***
 
 **1.	Write a C program to count number of digits in a number.**
-```#include <stdio.h>
+```
+#include <stdio.h>
 int main()
 {
     int a,flag=0;
@@ -78,7 +79,68 @@ int main()
     return 0;
 ```
 **4.	Write a C program to enter a number and print it in words.**
+```
+#include <stdio.h>
+#include <math.h>
 
+int main()
+{
+    int n, num = 0, digits;
+    printf("Enter any number to print in words: ");
+    scanf("%d", &n);
+    digits = (int) log10(n); 
+    while(n != 0)
+    {
+        num = (num * 10) + (n % 10);
+        n /= 10;
+    }
+    digits =  digits - ((int) log10(num));  
+    while(num != 0)
+    {
+        switch(num % 10)
+        {
+            case 0: 
+                printf("Zero ");
+                break;
+            case 1: 
+                printf("One ");
+                break;
+            case 2: 
+                printf("Two ");
+                break;
+            case 3: 
+                printf("Three ");
+                break;
+            case 4: 
+                printf("Four ");
+                break;
+            case 5: 
+                printf("Five ");
+                break;
+            case 6: 
+                printf("Six ");
+                break;
+            case 7: 
+                printf("Seven ");
+                break;
+            case 8: 
+                printf("Eight ");
+                break;
+            case 9: 
+                printf("Nine ");
+                break;
+        }
+        
+        num /= 10;
+    }
+    while(digits)
+    {
+        printf("Zero ");
+        digits--;
+    }
+    return 0;
+}
+```
 
 **5.	Write a C program to print all ASCII character with their values.**
 ```
@@ -177,7 +239,6 @@ int main() {
 **11.	Write a C program to convert Octal to Binary number system.**
 
 **12.	Write a C program to convert Octal to Decimal number system.**
-
 
 **13.	Write a C program to convert Octal to Hexadecimal number system.**
 
