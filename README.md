@@ -211,6 +211,32 @@ int main()
 ```
 **8.	Write a C program to convert Binary to Octal number system.**
 ```
+#include <stdio.h>
+#include <math.h>
+int main() {
+	int bin,oct_rev=0,dec=0,rem,mul=1;
+	printf("Enter number in binary: ");
+	scanf("%d",&bin);
+	while (bin>0) {
+		rem=bin%1000;
+		while (rem>0) {
+			dec+=(rem%10)*mul;
+			rem/=10;
+			mul*=2;
+		}
+		mul=1;
+		oct_rev=oct_rev*10+dec;
+		dec=0;
+		bin/=1000;
+	}
+	int temp=oct_rev,oct=0;
+	while (temp>0) {
+		oct=oct*10+temp%10;
+		temp/=10;
+	}
+	printf("The octal value is: %d",oct);
+	return 0;
+}
 ```
 **9.	Write a C program to convert Binary to Decimal number system.**
 ```
@@ -235,17 +261,143 @@ int main() {
 ```
 
 **10.	Write a C program to convert Binary to Hexadecimal number system.**
-
+```
+#include <stdio.h>
+#include <math.h>
+int main() {
+	int bin,dec=0,rem,mul=1,dig=0;
+	char hex_rev[20]={0},hex[20]={0};
+	printf("Enter number in binary: ");
+	scanf("%d",&bin);
+	int i = 0;
+	while (bin>0) {
+		rem=bin%10000;
+		while (rem>0) {
+			dec+=(rem%10)*mul;
+			rem/=10;
+			mul*=2;
+		}
+		if (dec>10) 
+			dec=dec+55;
+		else 
+			dec=dec+48;
+		mul=1;
+		hex_rev[i]=dec;
+		dec=0;
+		bin/=10000;
+		i++;
+		dig++;
+	}
+	for(i=0;i<dig;i++) 
+		hex[i]=hex_rev[dig-i-1];
+	printf("The hexadecimal value is: %s",hex);
+	return 0;
+}
+```
 **11.	Write a C program to convert Octal to Binary number system.**
-
+```
+#include <stdio.h>
+int main() {
+	int oct,oct_rev=0,bin=0,x,mul=1;
+	printf("Enter number in octal: ");
+	scanf("%d",&oct);
+	while (oct>0) {
+		oct_rev=oct_rev*10+oct%10;
+		oct/=10;
+	}
+	printf("The number in binary is: ");
+	while (oct_rev>0) {
+		x=oct_rev%10;
+		while (x>0) {
+			bin+=(x%2)*mul;
+			x/=2;
+			mul*=10;
+		}
+		printf("%0.3d",bin);
+		bin=0;
+		mul=1;
+		oct_rev/=10;
+	}
+}
+```
 **12.	Write a C program to convert Octal to Decimal number system.**
-
+```
+#include <stdio.h>
+#include <math.h>
+int main() {
+	int oct,dec=0,mul=1;
+	printf("Enter octal number: ");
+	scanf("%d",&oct);
+	while (oct>0) {
+		dec+=(oct%10)*mul;
+		oct/=10;
+		mul*=8;
+	}
+	printf("The number in decimal is: %d",dec);
+	return 0;
+}
+```
 **13.	Write a C program to convert Octal to Hexadecimal number system.**
-
+```
+#include <stdio.h>
+int main() {
+	int oct,dec=0,mul=1,i=0,x,len=0;
+	char hex[20]={0},hex_rev[20]={0};
+	printf("Enter octal number: ");
+	scanf("%d",&oct);
+	while (oct>0) {
+		dec+=(oct%10)*mul;
+		oct/=10;
+		mul*=8;
+	}
+	while (dec>0) {
+		x=dec%16;
+		if (x>9)
+			hex_rev[i]=x+55;
+		else
+			hex_rev[i]=x+48;
+		i++;
+		dec/=16;
+		len++;
+	}
+	for(i=0;i<len;i++)
+		hex[i]=hex_rev[len-i-1];
+	printf("The number in hexadecimal is: %s",hex);
+	return 0;
+}
+```
 **14.	Write a C program to convert Decimal to Binary number system.**
-
+```
+#include <stdio.h>
+int main() {
+	int dec,bin=0,mul=1;
+	printf("Enter number in decimal: ");
+	scanf("%d",&dec);
+	while (dec>0) {
+		bin+=(dec%2)*mul;
+		dec/=2;
+		mul*=10;
+	}
+	printf("The number in binary is: %d",bin);
+	return 0;
+}
+```
 **15.	Write a C program to convert Decimal to Octal number system.**
-
+```
+#include <stdio.h>
+int main() {
+	int dec,oct=0,mul=1;
+	printf("Enter number in decimal: ");
+	scanf("%d",&dec);
+	while (dec>0) {
+		oct+=(dec%8)*mul;
+		dec/=8;
+		mul*=10;
+	}
+	printf("The number in octal is: %d",oct);
+	return 0;
+}
+```
 **16.	Write a C program to convert Decimal to Hexadecimal number system.**
 ```
 #include<stdio.h>
