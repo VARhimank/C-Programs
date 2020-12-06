@@ -82,29 +82,88 @@ int main() {
 5.	Write a C program to count total number of notes in given amount.
 ```
 #include <stdio.h>
-#include <ctype.h>
-int main() {
-    int a;
-    printf("Enter an amount \n");
-    scanf("%d",&a);
-    if(a>=2000)
-    {rem=a%2000};
-    else if(2000>a>=500)
-    printf("");
+
+int main() 
+{
+    int  a[9]={2000, 500,100,50,20,10,5,2,1},amount,i , j=0; 
+    printf("Enter the amount:");
+    scanf("%d",&amount);
+     for(i=0;i<9;i++)
+    {
+     printf("\n%d notes is:%d",a[i],amount/a[i]);
+     j += amount/a[i]; 
+     amount=amount%a[i];
+    }
+    printf ("\ntotal number of notes are %d" , j);
     return 0;
 }
-  INCOMPLETE
 ```
-6.	Write a C program to input month number and print number of days in that month.
+6.	Write a C program to input month number and print number of days in that month. 
+**REPEATED**
 
 7.	Write a C program to input angles of a triangle and check whether triangle is valid or not.
+```
+#include <stdio.h>
 
+int main() 
+{
+    int a1 , a2 , a3;
+    printf ("enter first angle in degrees - ");
+    scanf ("%d" , &a1);
+    printf ("enter second angle in degrees - ");
+    scanf ("%d" , &a2);
+     printf ("enter third angle in degrees - ");
+    scanf ("%d" , &a3);
+    
+    if (a1+a2+a3 == 180)
+    {        printf ("Triangle is valid as sum of all angles is %d",a1+a2+a3);    }
+    else 
+    {        printf ("Triangle is not valid as sum of all angles is %d",a1+a2+a3);    }
+    return 0;
+}
+```
 8.	Write a C program to input all sides of a triangle and check whether triangle is valid or not.
+```
+#include <stdio.h>
 
+int main() 
+{
+    int side1 , side2 , side3;
+    printf ("enter first side");
+    scanf ("%d" , &side1);
+    printf ("enter second side");
+    scanf ("%d" , &side2);
+     printf ("enter third side");
+    scanf ("%d" , &side3);
+    if (side1 + side2 > side3 && side2 + side3 > side1 && side1 + side3 > side2)
+    {        printf ("Triangle is valid");    }
+    else 
+    {        printf ("Triangle is not valid");    }
+    return 0;
+}
+```
 9.	Write a C program to check whether the triangle is equilateral, isosceles or scalene triangle.
 
 10.	Write a C program to calculate profit or loss.
+```
+#include <stdio.h>
 
+int main() 
+{
+    int sp , cp;
+    printf ("enter cost price of product - ");
+    scanf ("%d" , &cp);
+    printf ("enter selliing price of product - ");
+    scanf ("%d" , &sp);
+    if (sp>cp)
+    {        printf ("Profit is of Rs. %d" , sp-cp);    }
+    else if (cp > sp)
+    {        printf ("Loss is of Rs. %d" , cp-sp);    }
+    else 
+    {        printf ("No profit or loss");    }
+    return 0;
+}
+```
 11.	Write a C program to input marks of five subjects Physics, Chemistry, Biology, Mathematics and Computer. Calculate percentage and grade according to following:
 Percentage	>=	90%	:	Grade	A
 Percentage	>=	80%	:	Grade	B
