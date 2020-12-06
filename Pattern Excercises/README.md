@@ -32,7 +32,6 @@ int i, j, r, k;
    }
     return 0;
 }
-
 ```
 
 ```
@@ -63,7 +62,7 @@ int main() {
             else
             {
                 printf(" ");                                       
-            }
+            }}
             printf("\n");                                
     }
     return 0;
@@ -101,7 +100,6 @@ int r, i, j,k;
    }
     return 0;
 }
-
 ```
 
 ```
@@ -138,7 +136,6 @@ int i, j, r;
     }
     return 0;
 }
-
 ```
 
 ```
