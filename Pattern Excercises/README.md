@@ -33,7 +33,7 @@ int i, j, r, k;
     return 0;
 }
 ```
-
+***
 ```
     *
    * *
@@ -68,7 +68,7 @@ int main() {
     return 0;
 }
 ```
-
+***
 ```
 *********
  *******
@@ -101,7 +101,7 @@ int r, i, j,k;
     return 0;
 }
 ```
-
+***
 ```
 *********
  *	    *
@@ -137,7 +137,7 @@ int i, j, r;
     return 0;
 }
 ```
-
+***
 ```
 *
 **
@@ -174,7 +174,7 @@ int i, j, n, f=1;
     return 0;
 }
 ```
-
+***
 ```
     *
    **
@@ -237,6 +237,7 @@ Square number patterns
    return 0;
  }
 ```
+***
 ```
 Number pattern 1
 11111
@@ -260,7 +261,7 @@ int main()
    return 0;
 }     
 ```
-
+***
 ```
 Number pattern 2
 01010
@@ -284,6 +285,7 @@ int main()
    return 0;
 }
 ```
+***
 ```
 Number pattern 3
 11111
@@ -307,6 +309,7 @@ int main()
    return 0;
 }
 ```
+***
 ```
 Number pattern 4
 11111
@@ -330,6 +333,7 @@ int main()
    return 0;
 }
 ```
+***
 ```
 Number pattern 5	
 10101
